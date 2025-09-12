@@ -70,7 +70,7 @@ export default tseslint.config([
 
 ## Design Photo
 <p align="center">
-  <img src="./src/assets/sample-app.webp" alt="design-photo"/>
+  <img src="./src/assets/sample-2.webp" alt="design-photo"/>
 </p>
 
 

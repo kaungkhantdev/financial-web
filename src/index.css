@@ -116,7 +116,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground xl:container;
   }
   :root {
     --chart-1: oklch(0.646 0.222 41.116);
@@ -132,5 +132,17 @@
     --chart-3: oklch(0.769 0.188 70.08);
     --chart-4: oklch(0.627 0.265 303.9);
     --chart-5: oklch(0.645 0.246 16.439);
+  }
+}
+
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 5rem;
+  @media (width >= --theme(--breakpoint-sm)) {
+    max-width: none;
+  }
+  @media (width >= 1400px) {
+    max-width: 1400px;
   }
 }

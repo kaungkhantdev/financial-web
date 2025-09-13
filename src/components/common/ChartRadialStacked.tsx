@@ -1,16 +1,4 @@
-"use client"
-
-import { TrendingUp } from "lucide-react"
 import { Label, PolarRadiusAxis, RadialBar, RadialBarChart } from "recharts"
-
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
 import {
   type ChartConfig,
   ChartContainer,
@@ -37,12 +25,27 @@ export function ChartRadialStacked() {
   const totalVisitors = chartData[0].desktop + chartData[0].mobile
 
   return (
-    <Card className="flex flex-col">
-      <CardHeader className="items-center pb-0">
-        <CardTitle>Radial Chart - Stacked</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
-      </CardHeader>
-      <CardContent className="flex flex-1 items-center pb-0">
+    <div>
+      <div className="items-center pb-0">
+        <div className="mb-4">All expenses</div>
+
+        <div className="grid grid-cols-3 gap-4 mb-6">
+            <div>
+                <p className="text-xs text-gray-500 mb-1">Daily</p>
+                <p className="font-semibold text-gray-900">$682.20</p>
+            </div>
+            <div>
+                <p className="text-xs text-gray-500 mb-1">Weekly</p>
+                <p className="font-semibold text-gray-900">$2,193.26</p>
+            </div>
+            <div>
+                <p className="text-xs text-gray-500 mb-1">Monthly</p>
+                <p className="font-semibold text-gray-900">$6,638.72</p>
+            </div>
+        </div>
+
+      </div>
+      <div className="flex flex-1 items-center pb-0">
         <ChartContainer
           config={chartConfig}
           className="mx-auto aspect-square w-full max-w-[250px]"
@@ -99,15 +102,40 @@ export function ChartRadialStacked() {
             />
           </RadialBarChart>
         </ChartContainer>
-      </CardContent>
-      <CardFooter className="flex-col gap-2 text-sm">
-        <div className="flex items-center gap-2 leading-none font-medium">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+      </div>
+      <div className="flex-col gap-2 text-sm">
+        {/* Category List */}
+        <div className="space-y-3">
+            <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+                <span className="text-sm text-gray-700">Entertainments</span>
+                </div>
+                <span className="text-sm font-medium text-gray-900">46%</span>
+            </div>
+            <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+                <span className="text-sm text-gray-700">Platform</span>
+                </div>
+                <span className="text-sm font-medium text-gray-900">56%</span>
+            </div>
+            <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-orange-400 rounded-full"></div>
+                <span className="text-sm text-gray-700">Shopping</span>
+                </div>
+                <span className="text-sm font-medium text-gray-900">48%</span>
+            </div>
+            <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-2">
+                <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
+                <span className="text-sm text-gray-700">Food & health</span>
+                </div>
+                <span className="text-sm font-medium text-gray-900">63%</span>
+            </div>
         </div>
-        <div className="text-muted-foreground leading-none">
-          Showing total visitors for the last 6 months
-        </div>
-      </CardFooter>
-    </Card>
+      </div>
+    </div>
   )
 }

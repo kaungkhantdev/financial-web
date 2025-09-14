@@ -32,15 +32,15 @@ const ChartRadialStacked = () => {
         <div className="grid grid-cols-3 gap-4 mb-6">
             <div>
                 <p className="text-xs text-gray-500 mb-1">Daily</p>
-                <p className="font-semibold text-gray-900">$682.20</p>
+                <p className="font-semibold text-gray-900 dark:text-white">$682.20</p>
             </div>
             <div>
                 <p className="text-xs text-gray-500 mb-1">Weekly</p>
-                <p className="font-semibold text-gray-900">$2,193.26</p>
+                <p className="font-semibold text-gray-900 dark:text-white">$2,193.26</p>
             </div>
             <div>
                 <p className="text-xs text-gray-500 mb-1">Monthly</p>
-                <p className="font-semibold text-gray-900">$6,638.72</p>
+                <p className="font-semibold text-gray-900 dark:text-white">$6,638.72</p>
             </div>
         </div>
 
@@ -111,28 +111,28 @@ const ChartRadialStacked = () => {
                 <div className="w-3 h-3 bg-green-500 rounded-full"></div>
                 <span className="text-sm text-gray-700">Entertainments</span>
                 </div>
-                <span className="text-sm font-medium text-gray-900">46%</span>
+                <span className="text-sm font-medium text-gray-900 dark:text-white">46%</span>
             </div>
             <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-red-500 rounded-full"></div>
                 <span className="text-sm text-gray-700">Platform</span>
                 </div>
-                <span className="text-sm font-medium text-gray-900">56%</span>
+                <span className="text-sm font-medium text-gray-900 dark:text-white">56%</span>
             </div>
             <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-orange-400 rounded-full"></div>
                 <span className="text-sm text-gray-700">Shopping</span>
                 </div>
-                <span className="text-sm font-medium text-gray-900">48%</span>
+                <span className="text-sm font-medium text-gray-900 dark:text-white">48%</span>
             </div>
             <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-2">
                 <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
                 <span className="text-sm text-gray-700">Food & health</span>
                 </div>
-                <span className="text-sm font-medium text-gray-900">63%</span>
+                <span className="text-sm font-medium text-gray-900 dark:text-white">63%</span>
             </div>
         </div>
       </div>

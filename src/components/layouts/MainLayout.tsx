@@ -5,7 +5,7 @@ import Loading from '../common/Loading';
 
 function MainLayout() {
   return (
-    <div>
+    <div className='xl:container'>
       <Header />
       <main>
         <Suspense fallback={<Loading />}>

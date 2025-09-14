@@ -74,7 +74,7 @@ const Header = () => {
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
             <div className="hidden lg:block text-sm">
-              <div className="font-medium text-gray-900">Jaylon Baptiste</div>
+              <div className="font-medium">Jaylon Baptiste</div>
               <div className="text-gray-500 text-xs">@jaylonbaptiste</div>
             </div>
           </div>
@@ -85,12 +85,12 @@ const Header = () => {
       <div className="flex align-baseline justify-between flex-wrap pt-10">
         {/* Welcome Section */}
         <div className="">
-          <h1 className="text-xl font-bold text-gray-900 mb-2">Good morning, Jaylon</h1>
+          <h1 className="text-xl font-bold mb-2">Good morning, Jaylon</h1>
           <p className="text-gray-600 text-sm">This is your finance report</p>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex space-x-8 border-b border-gray-200 mt-4 md:mt-0 overflow-auto">
+        <div className="flex space-x-8 border-b border-gray-200 dark:border-gray-600 mt-4 md:mt-0 overflow-auto">
           {routes.map((route) => (
             <NavItem 
               key={route.url}

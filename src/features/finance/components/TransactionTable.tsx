@@ -226,11 +226,11 @@ function DraggableRow({ row }: { row: Row<z.infer<typeof schema>> }) {
   )
 }
 
-export function TransactionTable({
+const TransactionTable = ({
   data: initialData,
 }: {
   data: z.infer<typeof schema>[]
-}) {
+}) => {
   const [data, setData] = React.useState(() => initialData)
   const [rowSelection, setRowSelection] = React.useState({})
   const [columnVisibility, setColumnVisibility] =
@@ -292,7 +292,7 @@ export function TransactionTable({
   }
 
   return (
-    <div className="relative flex flex-col gap-4 overflow-auto p-5 rounded-lg border border-primary/10">
+    <div className="relative flex flex-col gap-4 overflow-auto p-5 rounded-lg border">
         <div className='flex items-center justify-between flex-wrap'>
             <div>
                 <h3 className='text-lg'>Transitions</h3>
@@ -433,3 +433,5 @@ export function TransactionTable({
       </div>
   )
 }
+
+export default TransactionTable;

@@ -28,7 +28,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig
 
-export function ChartLineMultiple() {
+const ChartLineMultiple = () => {
   return (
     <div className="bg-white rounded-md border p-5 w-full">
       <div>
@@ -99,3 +99,5 @@ export function ChartLineMultiple() {
     </div>
   )
 }
+
+export default ChartLineMultiple;

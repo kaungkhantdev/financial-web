@@ -1,13 +1,12 @@
 import './App.css'
-import FinanceDashboard from './components/common/FinanceDashboard'
+import MainLayout from './components/layouts/MainLayout'
+import { Finance } from './features/finance'
 function App() {
 
   return (
-    <>
-    <main>
-      <FinanceDashboard />
-    </main>
-    </>
+    <MainLayout>
+        <Finance />
+    </MainLayout>
   )
 }
 

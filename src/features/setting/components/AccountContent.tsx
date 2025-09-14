@@ -1,6 +1,4 @@
 import { Button } from "@/components/ui/button"
-import { StaffDetailActivity } from "@/features/staff-management"
-import data from "../../../utils/data.json"
 
 const AccountContent = () => {
   return (
@@ -71,10 +69,6 @@ const AccountContent = () => {
             <div className="col-span-2 lg:col-span-1 text-end">
                 <Button variant={'outline'} size={'sm'}>Manage Team</Button>
             </div>
-        </div>
-
-        <div className="mt-5">
-            <StaffDetailActivity data={data} />
         </div>
     </div>
   )

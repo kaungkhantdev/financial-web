@@ -8,15 +8,15 @@ import {
 } from "@/components/ui/breadcrumb";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Link, useLocation } from "react-router";
+import { ROUTES } from "@/utils/constants";
 
 const routes = [
-  { url: '/', name: 'Overview'}, 
-  { url: '/wallet', name: 'Wallet'}, 
-  { url: '/analytics', name: 'Analytics'}, 
-  { url: '/transaction', name: 'Transaction'}, 
-  { url: '/help', name: 'Help'}, 
-  { url: '/settings', name: 'Settings'}, 
-  { url: '/report', name: 'Report'}, 
+  { url: ROUTES.HOME, name: 'Overview'}, 
+  { url: ROUTES.WALLET, name: 'Wallet'}, 
+  { url: ROUTES.ANALYSIS, name: 'Analytics'}, 
+  { url: ROUTES.TRANSACTION, name: 'Transaction'}, 
+  { url: ROUTES.SETTING, name: 'Settings'}, 
+  // { url: ROUTES.REPORT, name: 'Report'}, 
 ];
 
 interface NavParams { 
@@ -90,7 +90,7 @@ const Header = () => {
         </div>
 
         {/* Tab Navigation */}
-        <div className="hidden lg:flex space-x-8 border-b border-gray-200">
+        <div className="flex space-x-8 border-b border-gray-200 mt-4 md:mt-0 overflow-auto">
           {routes.map((route) => (
             <NavItem 
               key={route.url}
@@ -102,6 +102,8 @@ const Header = () => {
             />
           ))}
         </div>
+
+
       </div>
     </header>
   );

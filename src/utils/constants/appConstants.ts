@@ -12,12 +12,12 @@ export const STORAGE_KEYS = {
 
 export const ROUTES = {
   HOME: '/',
-  LOGIN: '/login',
-  REGISTER: '/register',
-  DASHBOARD: '/dashboard',
-  PROFILE: '/profile',
-  SETTINGS: '/settings',
-  HOTEL: '/hotel',
+  WALLET: '/wallet',
+  ANALYSIS: '/analysis',
+  TRANSACTION: '/transaction',
+  HELP: '/help',
+  REPORT: '/report',
+  SETTING: '/setting',
   NOT_FOUND: '/404',
 } as const;
 

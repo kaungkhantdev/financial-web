@@ -1,16 +1,14 @@
 import { TrendingUp, TrendingDown } from 'lucide-react';
 import data from '@/utils/data.json'
 import { Button } from '@/components/ui/button';
-import ChartLineMultiple from './ChartLineMultiple';
-import ChartRadialStacked from './ChartRadialStacked';
-import TransactionTable from './TransactionTable';
+import { TransactionTable } from '@/features/finance';
 
-const Finance = () => {
+const Transition = () => {
   return (
     <div className="p-6">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 gap-4">
             {/* Left Column */}
-            <div className="lg:col-span-2 space-y-4">
+            <div className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
                     {/* Balance Card */}
                     <div className="md:col-span-2 bg-white rounded-md border p-5 w-full">
@@ -59,23 +57,8 @@ const Finance = () => {
                         </div>
                     </div>
                 </div>
-
-                {/* Statistics Chart */}
-                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-                    <ChartLineMultiple />
-                    <ChartLineMultiple />
-                </div>
-
             </div>
-
-            {/* Right Column */}
-            <div className="bg-white rounded-md border p-5 w-full h-full">
-                {/* All Expenses */}
-                <div>
-                    <ChartRadialStacked />
-                </div>
-            </div>
-
+          
         </div>
 
         {/* Transactions */}
@@ -87,4 +70,4 @@ const Finance = () => {
   );
 }
 
-export default Finance
+export default Transition

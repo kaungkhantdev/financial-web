@@ -1,12 +1,10 @@
+import { RouterProvider } from 'react-router'
 import './App.css'
-import MainLayout from './components/layouts/MainLayout'
-import { Finance } from './features/finance'
+import router from './router/routes'
 function App() {
 
   return (
-    <MainLayout>
-        <Finance />
-    </MainLayout>
+      <RouterProvider router={router} />
   )
 }
 

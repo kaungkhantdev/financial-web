@@ -1,12 +1,17 @@
-import Header from '../layouts/Header';
+import { Suspense } from 'react';
+import Header from './Header';
+import { Outlet } from 'react-router';
+import Loading from '../common/Loading';
 
-const MainLayout = ({ children }: { children: React.ReactNode }) =>  {
+function MainLayout() {
   return (
-    <div className="">
-        {/* Header */}
-        <Header />
-    
-        {children}
+    <div>
+      <Header />
+      <main>
+        <Suspense fallback={<Loading />}>
+          <Outlet />
+        </Suspense>
+      </main>
     </div>
   );
 }

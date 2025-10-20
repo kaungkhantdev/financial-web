@@ -4,6 +4,7 @@ import TransactionList from './TransactionList';
 import { RateChart } from './RateChart';
 import { Button } from '@/components/ui/button';
 import { ChartPieDonutText } from './ChartPieDonutText';
+import { Greeting } from '@/utils/helpers/greeting';
 
 const Finance = () => {
   return (
@@ -14,7 +15,7 @@ const Finance = () => {
                <div className='flex items-center justify-center w-full lg:min-h-screen'>
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-4 w-full">
                     <div className='md:col-span-5 flex justify-between items-center'>
-                        <h1 className="text-2xl mb-2">Good morning, Jaylon</h1>
+                        <h1 className="text-lg mb-2">{Greeting()}, Jaylon</h1>
                         <div className='space-x-4 text-gray-500'>
                             <ChartSpline className='w-4 h-4 text-gray-500 inline-block' />
                             <BellDot className='w-4 h-4 text-gray-500 inline-block' />

@@ -76,7 +76,7 @@ const Header: React.FC = () => {
       {/* Top Bar */}
       <div className="lg:flex items-center justify-center w-full lg:min-h-screen">
         <div className="flex items-center justify-between lg:min-h-screen lg:flex-col h-full w-full pb-10 md:py-8 lg:py-5">
-          <img src={Logo} alt="Bank Logo" className="w-8 h-8" />
+          <img src={Logo} alt="Bank Logo" className="w-7 h-7" />
 
           {/* Greeting + Navigation */}
           <div className="">

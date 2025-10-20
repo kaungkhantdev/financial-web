@@ -90,10 +90,11 @@ export function ChartPieDonutText() {
                       data={chartData}
                       dataKey="visitors"
                       nameKey="browser"
-                      innerRadius={70}
+                      innerRadius={80}
                       outerRadius={100}
                       strokeWidth={5}
                       cornerRadius={8} 
+                      paddingAngle={3} 
                     >
                     <Label
                         content={({ viewBox }) => {

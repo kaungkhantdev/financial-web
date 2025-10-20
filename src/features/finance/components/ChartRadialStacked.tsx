@@ -27,7 +27,11 @@ const ChartRadialStacked = () => {
   return (
     <div>
       <div className="items-center pb-0">
-        <div className="mb-4">All expenses</div>
+        <div className="mb-6 flex items-center justify-center">
+            <div className="py-1 px-4 rounded-full flex items-center justify-center bg-black dark:bg-green-950">
+                <p className="text-sm text-white">K Bank *** 234</p>
+            </div>
+        </div>
 
         <div className="grid grid-cols-3 gap-4 mb-6">
             <div>

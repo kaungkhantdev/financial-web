@@ -1,110 +1,117 @@
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Link, useLocation } from "react-router";
 import { ROUTES } from "@/utils/constants";
+import Logo from "@/assets/logo.svg";
+import {
+  Bolt,
+  ChartNoAxesColumn,
+  ChartPie,
+  Home,
+  Wallet,
+} from "lucide-react";
+import React from "react";
 
-const routes = [
-  { url: ROUTES.HOME, name: 'Overview'}, 
-  { url: ROUTES.WALLET, name: 'Wallet'}, 
-  { url: ROUTES.ANALYSIS, name: 'Analytics'}, 
-  { url: ROUTES.TRANSACTION, name: 'Transaction'}, 
-  { url: ROUTES.SETTING, name: 'Settings'}, 
-  // { url: ROUTES.REPORT, name: 'Report'}, 
-];
-
-interface NavParams { 
-  url: string; 
-  name: string; 
-  currentPath: string; 
+interface NavParams {
+  url: string;
+  name: string;
+  currentPath: string;
 }
 
-const NavItem = ({ navParams }: { navParams: NavParams }) => {
+interface NavItemProps {
+  navParams: NavParams;
+  children: React.ReactNode;
+}
+
+const routes = [
+  { url: ROUTES.HOME, name: "Overview", icon: Home },
+  { url: ROUTES.WALLET, name: "Wallet", icon: Wallet },
+  { url: ROUTES.ANALYSIS, name: "Analytics", icon: ChartPie },
+  { url: ROUTES.TRANSACTION, name: "Transaction", icon: ChartNoAxesColumn },
+  { url: ROUTES.SETTING, name: "Settings", icon: Bolt },
+];
+
+const NavItem: React.FC<NavItemProps> = ({ navParams, children }) => {
+  const isActive = navParams.currentPath === navParams.url;
+
   return (
-    <Link 
-      to={navParams.url} // Use actual URL instead of 'hello'
-      className={`pb-4 px-1 text-sm font-medium ${
-        navParams.currentPath === navParams.url
-          ? 'text-green-600 border-b-2 border-green-600'
-          : 'text-gray-500 hover:text-gray-700'
+    <Link
+      to={navParams.url}
+      className={`rounded-full transition-colors ${
+        isActive ? "text-green-600" : "text-gray-500 hover:text-gray-700"
       }`}
     >
-      {navParams.name}
+      {children}
     </Link>
   );
 };
 
-const Header = () => {
-  const location = useLocation(); // Better variable name
-  const currentPath = location.pathname; // Get pathname string
+const IconWrapper = ({
+  children,
+  active,
+}: {
+  children: React.ReactNode;
+  active?: boolean;
+}) => (
+  <div
+    className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
+      active ? "bg-green-50" : "bg-white"
+    }`}
+  >
+    <div
+      className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
+        active ? "bg-green-600" : "bg-white"
+      }`}
+    >
+      {children}
+    </div>
+  </div>
+);
+
+const Header: React.FC = () => {
+  const location = useLocation();
+  const currentPath = location.pathname;
 
   return (
-    <header className="px-6 py-4">
-      <div className="flex items-center justify-between">
-        <div className="flex items-center space-x-4">
-          <div className="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
-            <div className="w-4 h-4 bg-white rounded-sm"></div>
-          </div>
-          <div>
-            <Breadcrumb>
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <a href="/">Personal Account</a>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>Dashboard</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
+    <header className="px-8 py-4 h-screen sticky top-0">
+      {/* Top Bar */}
+      <div className=" flex flex-col items-center justify-between h-full">
+        <img src={Logo} alt="Bank Logo" className="w-8 h-8" />
+
+        {/* Greeting + Navigation */}
+        <div className="">
+          {/* Navigation Tabs */}
+          <div className="">
+            {routes.map((route) => {
+              const Icon = route.icon;
+              const isActive = currentPath === route.url;
+
+              return (
+                <NavItem
+                  key={route.url}
+                  navParams={{
+                    url: route.url,
+                    name: route.name,
+                    currentPath,
+                  }}
+                >
+                  <IconWrapper active={isActive}>
+                    <Icon className={`w-4 h-4 ${isActive ? 'text-white': 'text-black'}`} />
+                  </IconWrapper>
+                </NavItem>
+              );
+            })}
           </div>
         </div>
-        <div className="">
-          <div className="flex items-center space-x-3">
-            <Avatar className="rounded-lg">
-              <AvatarImage src="https://github.com/shadcn.png" />
-              <AvatarFallback>CN</AvatarFallback>
-            </Avatar>
-            <div className="hidden lg:block text-sm">
-              <div className="font-medium">Jaylon Baptiste</div>
-              <div className="text-gray-500 text-xs">@jaylonbaptiste</div>
-            </div>
-          </div>
+
+        <div className="flex items-center">
+          <Avatar className="rounded-full w-8 h-8">
+            <AvatarImage src="https://github.com/shadcn.png" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
         </div>
       </div>
 
-      {/* nav */}
-      <div className="flex align-baseline justify-between flex-wrap pt-10">
-        {/* Welcome Section */}
-        <div className="">
-          <h1 className="text-xl font-bold mb-2">Good morning, Jaylon</h1>
-          <p className="text-gray-600 text-sm">This is your finance report</p>
-        </div>
-
-        {/* Tab Navigation */}
-        <div className="flex space-x-8 border-b border-gray-200 dark:border-gray-600 mt-4 md:mt-0 overflow-auto">
-          {routes.map((route) => (
-            <NavItem 
-              key={route.url}
-              navParams={{
-                url: route.url,
-                name: route.name,
-                currentPath: currentPath
-              }} 
-            />
-          ))}
-        </div>
-
-
-      </div>
+      
     </header>
   );
 };

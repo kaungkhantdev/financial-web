@@ -5,9 +5,9 @@ import Loading from '../common/Loading';
 
 function MainLayout() {
   return (
-    <div className='xl:container'>
+    <div className="flex w-full min-h-screen mx-auto">
       <Header />
-      <main>
+      <main className="flex-1">
         <Suspense fallback={<Loading />}>
           <Outlet />
         </Suspense>

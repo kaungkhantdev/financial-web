@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -114,11 +114,11 @@
 
 @layer base {
   * {
-    font-family: "IBM Plex Sans", sans-serif;
+    font-family: "Montserrat", sans-serif;
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground bg-gradient-to-r from-green-100 from-10% via-sky-100 via-30% to-amber-50 to-90%;
   }
   :root {
     --chart-1: oklch(0.646 0.222 41.116);
@@ -140,7 +140,7 @@
 
 @utility container {
   margin-inline: auto;
-  padding-inline: 5rem;
+  padding-inline: 10rem;
   @media (width >= --theme(--breakpoint-sm)) {
     max-width: none;
   }

@@ -1,16 +1,17 @@
 import { TrendingUp, TrendingDown, ChartNoAxesColumn, Euro, ChartSpline, BellDot } from 'lucide-react';
-import ChartRadialStacked from './ChartRadialStacked';
+// import ChartRadialStacked from './ChartRadialStacked';
 import TransactionList from './TransactionList';
 import { RateChart } from './RateChart';
 import { Button } from '@/components/ui/button';
+import { ChartPieDonutText } from './ChartPieDonutText';
 
 const Finance = () => {
   return (
     <div className="">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 md:p-8 lg:p-0">
             {/* Left Column */}
             <div className="lg:col-span-2 space-y-4 ">
-               <div className='flex items-center justify-center w-full min-h-screen'>
+               <div className='flex items-center justify-center w-full lg:min-h-screen'>
                 <div className="grid grid-cols-1 md:grid-cols-5 gap-4 w-full">
                     <div className='md:col-span-5 flex justify-between items-center'>
                         <h1 className="text-2xl mb-2">Good morning, Jaylon</h1>
@@ -105,11 +106,12 @@ const Finance = () => {
             </div>
 
             {/* Right Column */}
-            <div className="px-5 flex items-center justify-center bg-white w-full min-h-screen">
+            <div className="py-5 lg:py-0 px-5 flex items-center justify-center bg-white w-full lg:min-h-screen rounded-3xl lg:rounded-none">
                 <div>
-                    <ChartRadialStacked />
+                    {/* <ChartRadialStacked /> */}
+                    <ChartPieDonutText />
                     {/* Statistics Chart */}
-                    <div className='flex space-x-6 w-full justify-between lg:mt-16'>
+                    <div className='flex space-x-6 w-full justify-between mt-8 lg:mt-16'>
                         {/* Income and Expenses Cards */}
                         <div className="flex flex-col justify-end">
                             <div className="flex items-center mb-4">

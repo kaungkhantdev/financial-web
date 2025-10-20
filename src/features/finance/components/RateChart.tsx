@@ -1,7 +1,7 @@
 import * as React from "react"
 import { 
-    Area, 
-    AreaChart, 
+    Bar, 
+    BarChart, 
     CartesianGrid, 
     // XAxis 
 } from "recharts"
@@ -16,8 +16,8 @@ import {
 import {
   type ChartConfig,
   ChartContainer,
-  ChartLegend,
-  ChartLegendContent,
+//   ChartLegend,
+//   ChartLegendContent,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart"
@@ -157,7 +157,7 @@ export function RateChart() {
   })
 
   return (
-    <Card className="p-0 shadow-none rounded-3xl border-0 h-full">
+    <Card className="p-0 shadow-none rounded-3xl overflow-hidden border-0 h-full">
       <CardHeader className="flex items-center gap-2 space-y-0 py-5 sm:flex-row">
         <div className="grid flex-1 gap-1">
           <span className="text-sm">Total Rate</span>
@@ -182,12 +182,21 @@ export function RateChart() {
           </SelectContent>
         </Select>
       </CardHeader>
-      <CardContent className="p-0">
+      <CardContent className="p-0 min-h-[180px]">
         <ChartContainer
           config={chartConfig}
-          className="aspect-auto h-[180px] w-full"
+          className="aspect-auto h-full w-full"
         >
-          <AreaChart data={filteredData}>
+            <BarChart accessibilityLayer data={filteredData}>
+                <CartesianGrid vertical={false} />
+                <ChartTooltip
+                cursor={false}
+                content={<ChartTooltipContent indicator="dashed" />}
+                />
+                <Bar dataKey="desktop" fill="var(--color-desktop)" radius={4} />
+                <Bar dataKey="mobile" fill="var(--color-mobile)" radius={4} />
+            </BarChart>
+          {/* <AreaChart data={filteredData}>
             <defs>
               <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
                 <stop
@@ -215,7 +224,7 @@ export function RateChart() {
               </linearGradient>
             </defs>
             <CartesianGrid vertical={false} />
-            {/* <XAxis
+            <XAxis
               dataKey="date"
               tickLine={false}
               axisLine={false}
@@ -228,7 +237,7 @@ export function RateChart() {
                   day: "numeric",
                 })
               }}
-            /> */}
+            />
             <ChartTooltip
               cursor={false}
               content={
@@ -258,7 +267,7 @@ export function RateChart() {
               stackId="a"
             />
             <ChartLegend content={<ChartLegendContent />} />
-          </AreaChart>
+          </AreaChart> */}
         </ChartContainer>
       </CardContent>
     </Card>

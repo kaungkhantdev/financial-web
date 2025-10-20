@@ -37,7 +37,7 @@ const NavItem: React.FC<NavItemProps> = ({ navParams, children }) => {
     <Link
       to={navParams.url}
       className={`rounded-full transition-colors ${
-        isActive ? "text-green-600" : "text-gray-500 hover:text-gray-700"
+        isActive ? "text-green-500" : "text-gray-500 hover:text-gray-700"
       }`}
     >
       {children}
@@ -59,7 +59,7 @@ const IconWrapper = ({
   >
     <div
       className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
-        active ? "bg-green-600" : "bg-white"
+        active ? "bg-green-500" : "bg-white"
       }`}
     >
       {children}
@@ -72,42 +72,44 @@ const Header: React.FC = () => {
   const currentPath = location.pathname;
 
   return (
-    <header className="px-8 py-4 h-screen sticky top-0">
+    <header className="md:px-8">
       {/* Top Bar */}
-      <div className=" flex flex-col items-center justify-between h-full">
-        <img src={Logo} alt="Bank Logo" className="w-8 h-8" />
+      <div className="lg:flex items-center justify-center w-full lg:min-h-screen">
+        <div className="flex items-center justify-between lg:min-h-screen lg:flex-col h-full w-full pb-10 md:py-8 lg:py-5">
+          <img src={Logo} alt="Bank Logo" className="w-8 h-8" />
 
-        {/* Greeting + Navigation */}
-        <div className="">
-          {/* Navigation Tabs */}
+          {/* Greeting + Navigation */}
           <div className="">
-            {routes.map((route) => {
-              const Icon = route.icon;
-              const isActive = currentPath === route.url;
+            {/* Navigation Tabs */}
+            <div className="flex lg:block">
+              {routes.map((route) => {
+                const Icon = route.icon;
+                const isActive = currentPath === route.url;
 
-              return (
-                <NavItem
-                  key={route.url}
-                  navParams={{
-                    url: route.url,
-                    name: route.name,
-                    currentPath,
-                  }}
-                >
-                  <IconWrapper active={isActive}>
-                    <Icon className={`w-4 h-4 ${isActive ? 'text-white': 'text-black'}`} />
-                  </IconWrapper>
-                </NavItem>
-              );
-            })}
+                return (
+                  <NavItem
+                    key={route.url}
+                    navParams={{
+                      url: route.url,
+                      name: route.name,
+                      currentPath,
+                    }}
+                  >
+                    <IconWrapper active={isActive}>
+                      <Icon className={`w-4 h-4 ${isActive ? 'text-white': 'text-black'}`} />
+                    </IconWrapper>
+                  </NavItem>
+                );
+              })}
+            </div>
           </div>
-        </div>
 
-        <div className="flex items-center">
-          <Avatar className="rounded-full w-8 h-8">
-            <AvatarImage src="https://github.com/shadcn.png" />
-            <AvatarFallback>CN</AvatarFallback>
-          </Avatar>
+          <div className="flex items-center">
+            <Avatar className="rounded-full w-8 h-8">
+              <AvatarImage src="https://github.com/shadcn.png" />
+              <AvatarFallback>CN</AvatarFallback>
+            </Avatar>
+          </div>
         </div>
       </div>
 

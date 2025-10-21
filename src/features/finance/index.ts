@@ -1,7 +1,10 @@
-export { default as Finance } from './components/Finance';
-export { default as ChartLineMultiple } from './components/ChartLineMultiple';
-export { default as ChartRadialStacked } from './components/ChartRadialStacked';
-export { default as TransactionTable } from './components/TransactionTable';
+export { ChartPieDonutText } from './components/ChartPieDonutText';
+export { ExchangeRateCards } from './components/ExchangeRateCards';
+export { GreetingHeader } from './components/GreetingHeader';
+export { RateChart } from './components/RateChart';
+export { RecentTransactions } from './components/RecentTransactions';
+export { RightPanel } from './components/RightPanel';
+export { TransactionList } from './components/TransactionList';
 
 // page
 export { default as FinancePage } from './page/FinancePage';

@@ -152,7 +152,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
     header: "Section Type",
     cell: ({ row }) => (
       <div className="w-32">
-        <Badge variant="outline" className="px-1.5 text-muted-foreground">
+        <Badge variant="outline" className="px-1.5 text-muted-foreground rounded-full">
           {row.original.type}
         </Badge>
       </div>
@@ -164,7 +164,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
     cell: ({ row }) => (
       <Badge
         variant="outline"
-        className="flex gap-1 px-1.5 text-muted-foreground [&_svg]:size-3"
+        className="flex gap-1 px-1.5 text-muted-foreground [&_svg]:size-3 rounded-full"
       >
         {row.original.status === "Done" ? (
           <CheckCircle2Icon className="text-green-500 dark:text-green-400" />
@@ -226,7 +226,7 @@ function DraggableRow({ row }: { row: Row<z.infer<typeof schema>> }) {
   )
 }
 
-const TransactionTable = ({
+export const TransactionTable = ({
   data: initialData,
 }: {
   data: z.infer<typeof schema>[]
@@ -292,14 +292,11 @@ const TransactionTable = ({
   }
 
   return (
-    <div className="relative flex flex-col gap-4 overflow-auto p-5 rounded-lg border">
-        <div className='flex items-center justify-between flex-wrap'>
-            <div>
-                <h3 className='text-lg'>Transitions</h3>
-            </div>
-            <div className='flex items-center gap-2'>
-                <Input placeholder='search'/>
-                <Button> <FilterIcon/>  Filter </Button>
+    <div className="relative flex flex-col gap-4 overflow-auto p-5 rounded-3xl bg-white">
+        <div className='flex items-center justify-end flex-wrap'>
+            <div className='flex items-center justify-end gap-2'>
+                <Input placeholder='search' className="rounded-full"/>
+                <Button className="rounded-full"> <FilterIcon/>  Filter </Button>
             </div>
         </div>
         <div className="overflow-hidden">
@@ -311,7 +308,7 @@ const TransactionTable = ({
             id={sortableId}
           >
             <Table>
-              <TableHeader className="sticky top-0 z-10 border-t bg-secondary">
+              <TableHeader className="sticky top-0 z-10 border-t bg-sky-50">
                 {table.getHeaderGroups().map((headerGroup) => (
                   <TableRow key={headerGroup.id}>
                     {headerGroup.headers.map((header) => {
@@ -369,7 +366,7 @@ const TransactionTable = ({
                   table.setPageSize(Number(value))
                 }}
               >
-                <SelectTrigger className="w-20" id="rows-per-page">
+                <SelectTrigger className="w-20 rounded-full" id="rows-per-page">
                   <SelectValue
                     placeholder={table.getState().pagination.pageSize}
                   />
@@ -390,7 +387,7 @@ const TransactionTable = ({
             <div className="ml-auto flex items-center gap-2 lg:ml-0">
               <Button
                 variant="outline"
-                className="hidden h-8 w-8 p-0 lg:flex"
+                className="hidden h-9 w-9 p-0 lg:flex rounded-full"
                 onClick={() => table.setPageIndex(0)}
                 disabled={!table.getCanPreviousPage()}
               >
@@ -399,7 +396,7 @@ const TransactionTable = ({
               </Button>
               <Button
                 variant="outline"
-                className="size-8"
+                className="size-9 rounded-full"
                 size="icon"
                 onClick={() => table.previousPage()}
                 disabled={!table.getCanPreviousPage()}
@@ -409,7 +406,7 @@ const TransactionTable = ({
               </Button>
               <Button
                 variant="outline"
-                className="size-8"
+                className="size-9 rounded-full"
                 size="icon"
                 onClick={() => table.nextPage()}
                 disabled={!table.getCanNextPage()}
@@ -419,7 +416,7 @@ const TransactionTable = ({
               </Button>
               <Button
                 variant="outline"
-                className="hidden size-8 lg:flex"
+                className="hidden size-9 lg:flex rounded-full"
                 size="icon"
                 onClick={() => table.setPageIndex(table.getPageCount() - 1)}
                 disabled={!table.getCanNextPage()}
@@ -433,5 +430,3 @@ const TransactionTable = ({
       </div>
   )
 }
-
-export default TransactionTable;

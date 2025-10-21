@@ -1,6 +1,6 @@
 import { BanknoteArrowDown, BanknoteArrowUp } from 'lucide-react';
 
-export default function TransactionList() {
+export function TransactionList() {
   const transactions = [
     {
       id: 1,

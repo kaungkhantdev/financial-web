@@ -1,3 +1,3 @@
-export { default as Analysis } from './components/Analysis';
+export { default as ChartLineMultiple } from './components/ChartLineMultiple';
 
 // page

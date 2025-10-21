@@ -1,3 +1,4 @@
-export { default as Wallet } from './components/Wallet';
+export { WalletHeader } from './components/WalletHeader';
+export { WalletCard } from './components/WalletCard';
 
 // page

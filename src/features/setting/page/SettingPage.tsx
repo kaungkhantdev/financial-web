@@ -1,31 +1,11 @@
-import { AccountContent, AppearanceContent, GeneralContent, SettingTabs } from "@/features/setting";
-
-const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
-  tabs: [
-    {
-      trigger: "general",
-      contentData: GeneralContent,
-    },
-    {
-      trigger: "account",
-      contentData: AccountContent,
-    },
-    {
-      trigger: "appearance",
-      contentData: AppearanceContent,
-    },
-  ],
-}
+import { WalletHeader } from "@/features/wallet/components/WalletHeader"
+import Basics from "../components/Basics"
 
 const SettingPage = () => {
   return (
-    <div className="p-6">
-        <SettingTabs tabs={data.tabs} />
+    <div className="md:p-8 lg:py-6 lg:pl-0 lg:pr-6 2xl:flex items-center justify-center w-full 2xl:min-h-screen">
+      <WalletHeader title="Settings" />
+      <Basics />
     </div>
   )
 }

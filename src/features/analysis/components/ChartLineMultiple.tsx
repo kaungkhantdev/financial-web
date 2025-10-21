@@ -30,9 +30,11 @@ const chartConfig = {
 
 const ChartLineMultiple = () => {
   return (
-    <div className="rounded-md border p-5 w-full">
+    <div className="rounded-3xl bg-white p-5 w-full">
       <div>
-        <div>Statics</div>
+        <div>
+          <p className="font-semibold">Statics</p>
+        </div>
         <div className="text-sm">January - June 2024</div>
       </div>
       <div>
@@ -74,19 +76,10 @@ const ChartLineMultiple = () => {
           </LineChart>
         </ChartContainer>
       </div>
-      <div>
-        <div className="flex w-full items-start gap-2 text-sm">
-           <div className="mt-6">
-              <div>
-                  <p className="text-gray-600 text-sm mb-1">Average income</p>
-                  <div className="flex items-center space-x-2">
-                  <h4 className="text-xl font-bold text-gray-900 dark:text-white">$10,389.49</h4>
-                  <span className="text-green-600 text-sm">+9.8%</span>
-                  <span className="text-gray-500 text-xs">compare to last month</span>
-                  </div>
-              </div>
-            </div>
-        </div>
+      <div className="mt-3">
+        <p className="text-gray-600 text-sm mb-1">
+          Comparison of income and expenses from January to June 2024.
+        </p>
       </div>
     </div>
   )

@@ -2,58 +2,75 @@ import { useTheme } from "@/components/common/ThemeProvider"
 import { Label } from "@/components/ui/label"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Skeleton } from "@/components/ui/skeleton"
-import { Select, SelectTrigger, SelectValue, SelectContent, SelectItem } from "@/components/ui/select"
+import { Button } from "@/components/ui/button"
 
-const AppearanceContent = () => {
-   const { theme, setTheme } = useTheme()
+const Basics = () => {
+  const { theme, setTheme } = useTheme()
+
   return (
-    <div className="w-full">
-        <div className="pb-2 border-b border-gray-100 dark:border-gray-900">
-            <h2 className="">Appearance</h2>
+    <div className="w-full p-6 rounded-3xl bg-white">
+        <div className="flex items-center justify-between pb-2 border-b border-gray-100 dark:border-gray-900">
+            <h2 className="">Basics</h2>
+            <Button variant={'link'} className="rounded-full">Edit</Button>
         </div>
         
-        {/* Theme color */}
-        <div className="grid grid-cols-6 border-b border-gray-100 dark:border-gray-900 w-full py-5">
-            <div className="col-span-3 lg:col-span-2">
-                <span className="text-sm font-medium">Theme Color</span>
-                <br />
-                <span className="text-sm text-muted-foreground">
-                    Customize theme color in index.css
-                </span>
+        {/* Photo */}
+        <div className="grid grid-cols-5 gap-4 border-b border-gray-100 dark:border-gray-900 w-full py-5">
+            <div className=" col-span-2 ">
+                <span className="text-sm font-medium">Photo</span>
             </div>
-            <div className="col-span-3">
-                <div className="flex items-center space-x-3">
-                    {/* Color Circle */}
-                    <div 
-                        className="w-6 h-6 bg-primary rounded-lg cursor-pointer hover:scale-110 transition-transform duration-200"
-                        title="Click to copy color code"
-                    />
-                    
-                    {/* Color Code Display */}
-                    <div 
-                        className="bg-muted border rounded-lg px-3 py-1.5 font-mono text-sm cursor-pointer transition-colors duration-200"
-                        title="Click to copy color code"
-                    >
-                        <span className="text-gray-400">#</span>
-                        <span className="font-medium">4e5fc7</span>
-                    </div>
-                </div>
+            <div className=" col-span-3 ">
+                <img 
+                    src="https://github.com/shadcn.png"
+                    alt="Profile" 
+                    className="w-11 h-11 rounded-full object-cover"
+                />
+            </div>
+        </div>
+        
+        {/* Name */}
+        <div className="grid grid-cols-5 gap-4 border-b border-gray-100 dark:border-gray-900 w-full py-5">
+            <div className=" col-span-2 ">
+                <span className="text-sm font-medium">Name</span>
+            </div>
+            <div className=" col-span-3 ">
+                <span className="text-sm">Sophie Chamberlain</span>
             </div>
         </div>
 
+        {/* Email Address */}
+        <div className="grid grid-cols-5 gap-4 border-gray-100 dark:border-gray-900 w-full py-5">
+            <div className=" col-span-2 ">
+                <span className="text-sm font-medium">Email Address</span>
+            </div>
+            <div className=" col-span-3  overflow-hidden">
+                <span className="text-sm text-wrap">hi@sophiehamberlain.com</span>
+            </div>
+        </div>
+
+        {/* Password */}
+        <div className="grid grid-cols-5 gap-4 border-gray-100 dark:border-gray-900 w-full py-5">
+            <div className=" col-span-2">
+                <span className="text-sm font-medium">Password</span>
+            </div>
+            <div className=" col-span-3 overflow-hidden">
+                <Button variant={'outline'} className="rounded-full">Change your password</Button>
+            </div>
+        </div>
+        
         {/* Device Theme */}
-        <div className="grid grid-cols-6 border-b border-gray-100 dark:border-gray-900 w-full py-5">
-            <div className="col-span-3 lg:col-span-2">
+        <div className="grid grid-cols-5 border-gray-100 dark:border-gray-900 w-full py-5">
+            <div className=" col-span-2 ">
                 <span className="text-sm font-medium">Device Theme</span>
                 <br />
                 <span className="text-sm text-muted-foreground">
                     Change various mode
                 </span>
             </div>
-            <div className="col-span-3">
+            <div className=" col-span-3">
                 <div className="flex items-center space-x-3">
                     <RadioGroup defaultValue={theme} className="flex flex-col lg:flex-row">
-                        <Label className="cursor-pointer has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-primary/5 flex items-start gap-3 rounded-lg border p-3">
+                        <Label className="cursor-pointer has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-primary/5 flex items-start gap-3 rounded-xl border p-3">
                             <RadioGroupItem
                                 onClick={() => setTheme("light")} 
                                 value="light" 
@@ -83,7 +100,7 @@ const AppearanceContent = () => {
                                     </div>
                                 </div>
                         </Label>
-                        <Label className="cursor-pointer has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-primary/5 flex items-start gap-3 rounded-lg border p-3">
+                        <Label className="cursor-pointer has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-primary/5 flex items-start gap-3 rounded-xl border p-3">
                             <RadioGroupItem
                                 onClick={() => setTheme("dark")} 
                                 value="dark" 
@@ -113,7 +130,7 @@ const AppearanceContent = () => {
                                     </div>
                                 </div>
                         </Label>
-                        <Label className="cursor-pointer has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-primary/5 flex items-start gap-3 rounded-lg border p-3">
+                        <Label className="cursor-pointer has-[[data-state=checked]]:border-ring has-[[data-state=checked]]:bg-primary/5 flex items-start gap-3 rounded-xl border p-3">
                             <RadioGroupItem
                                 onClick={() => setTheme("system")} 
                                 value="system" 
@@ -147,29 +164,8 @@ const AppearanceContent = () => {
                 </div>
             </div>
         </div>
-
-        {/* Language */}
-        <div className="grid grid-cols-6 border-b border-gray-100 dark:border-gray-900 w-full py-5">
-            <div className="col-span-3 lg:col-span-2">
-                <span className="text-sm font-medium">Language</span>
-                <br />
-                <span className="text-sm text-muted-foreground">
-                   Default language
-                </span>
-            </div>
-            <div className="col-span-3">
-                <Select defaultValue="english_uk">
-                    <SelectTrigger className="w-[180px]">
-                        <SelectValue placeholder="Language" />
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectItem value="english_uk">English UK</SelectItem>
-                    </SelectContent>
-                </Select>
-            </div>
-        </div>
     </div>
   )
 }
 
-export default AppearanceContent
+export default Basics

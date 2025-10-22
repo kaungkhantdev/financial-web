@@ -19,6 +19,11 @@ export const ROUTES = {
   REPORT: '/report',
   SETTING: '/setting',
   NOT_FOUND: '/404',
+  REGISTER: 'register',
+  LOGIN: 'login',
+  FORGOT_PASSWORD: 'forgot-password',
+  RESET_PASSWORD: 'reset-password',
+  AUTH: '/auth',
 } as const;
 
 export const THEMES = {

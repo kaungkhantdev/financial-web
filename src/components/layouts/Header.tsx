@@ -59,7 +59,7 @@ const IconWrapper = ({
   >
     <div
       className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
-        active ? "bg-green-500" : "bg-white dark:bg-accent"
+        active ? "bg-green-500" : "bg-white dark:bg-zinc-800"
       }`}
     >
       {children}

@@ -10,7 +10,34 @@ const AnalysisPage = lazy(() => import('@/features/analysis/page/AnalysisPage'))
 const TransitionPage = lazy(() => import('@/features/transition/page/TransitionPage'));
 const SettingPage = lazy(() => import('@/features/setting/page/SettingPage'));
 
+// authentication pages
+const Register = lazy(() => import('@/features/authentication/page/RegisterPage'));
+const LoginPage = lazy(() => import('@/features/authentication/page/LoginPage'));
+const ForgotPasswordPage = lazy(() => import('@/features/authentication/page/ForgotPasswordPage'));
+const NewPasswordPage = lazy(() => import('@/features/authentication/page/NewPasswordPage'));
+
 const router = createBrowserRouter([
+  {
+    path: ROUTES.AUTH,
+    children: [
+      {
+        path: ROUTES.REGISTER,
+        Component: Register,
+      },
+      {
+        path: ROUTES.LOGIN,
+        Component: LoginPage,
+      },
+      {
+        path: ROUTES.FORGOT_PASSWORD,
+        Component: ForgotPasswordPage,
+      },
+      {
+        path: ROUTES.RESET_PASSWORD,
+        Component: NewPasswordPage,
+      },
+    ]
+  },
   {
     Component: MainLayout,
     children: [

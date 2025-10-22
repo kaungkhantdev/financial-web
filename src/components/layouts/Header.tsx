@@ -54,12 +54,12 @@ const IconWrapper = ({
 }) => (
   <div
     className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
-      active ? "bg-green-50" : "bg-white"
+      active ? "bg-green-50 dark:bg-green-800" : "bg-white dark:bg-card"
     }`}
   >
     <div
       className={`w-8 h-8 rounded-full flex items-center justify-center transition-colors ${
-        active ? "bg-green-500" : "bg-white"
+        active ? "bg-green-500" : "bg-white dark:bg-accent"
       }`}
     >
       {children}
@@ -72,7 +72,8 @@ const Header: React.FC = () => {
   const currentPath = location.pathname;
 
   return (
-    <header className="p-4 md:px-8 lg:py-0 fixed top-0 left-0 w-full lg:w-auto z-50 lg:static lg:top-auto lg:left-auto bg-gradient-to-r from-green-100 from-10% via-sky-100 via-30% to-amber-50 to-90% lg:bg-none">
+    <header className="p-4 md:px-8 lg:py-0 fixed top-0 left-0 w-full lg:w-auto z-50 lg:static lg:top-auto lg:left-auto bg-gradient-to-r from-green-100 from-10% via-sky-100 via-30% to-amber-50 to-90%
+           dark:from-[#0C0C0E] dark:via-[#0C0C0E] dark:to-[#0C0C0E] lg:bg-none">
       {/* Top Bar */}
       <div className="lg:flex items-center justify-center w-full lg:min-h-screen lg:sticky lg:top-0">
         <div className="flex items-center justify-between lg:min-h-screen lg:flex-col h-full w-full lg:py-5">
@@ -96,7 +97,7 @@ const Header: React.FC = () => {
                     }}
                   >
                     <IconWrapper active={isActive}>
-                      <Icon className={`w-4 h-4 ${isActive ? 'text-white': 'text-black'}`} />
+                      <Icon className={`w-4 h-4 ${isActive ? 'text-white': 'text-black dark:text-white'}`} />
                     </IconWrapper>
                   </NavItem>
                 );

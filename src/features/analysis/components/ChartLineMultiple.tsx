@@ -30,7 +30,7 @@ const chartConfig = {
 
 const ChartLineMultiple = () => {
   return (
-    <div className="rounded-3xl bg-white p-5 w-full">
+    <div className="rounded-3xl bg-white dark:bg-card p-5 w-full">
       <div>
         <div>
           <p className="font-semibold">Statics</p>
@@ -77,7 +77,7 @@ const ChartLineMultiple = () => {
         </ChartContainer>
       </div>
       <div className="mt-3">
-        <p className="text-gray-600 text-sm mb-1">
+        <p className="text-gray-600 dark:text-gray-500 text-sm mb-1">
           Comparison of income and expenses from January to June 2024.
         </p>
       </div>

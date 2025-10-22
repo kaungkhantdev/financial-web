@@ -1,11 +1,15 @@
 import { TrendingUp, TrendingDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ChartPieDonutText } from './ChartPieDonutText';
+import { RightPanelHeader } from './RightPanelHeader';
+import { RightPanelCategoryList } from './RightPanelCategoryList';
 
 export const RightPanel = () => (
-  <div className="p-6 lg:py-6 flex items-center justify-center bg-white w-full 2xl:min-h-screen rounded-3xl lg:rounded-none">
+  <div className="p-6 lg:py-6 flex items-center justify-center dark:bg-card bg-white w-full 2xl:min-h-screen rounded-3xl lg:rounded-none">
     <div>
+      <RightPanelHeader />
       <ChartPieDonutText />
+      <RightPanelCategoryList />
       <div className="flex space-x-6 justify-between mt-8 lg:mt-16">
         {/* Income */}
         <div className="flex flex-col justify-end">

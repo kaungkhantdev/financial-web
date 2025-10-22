@@ -64,7 +64,7 @@ export function TransactionList() {
         {transactions.map((transaction) => (
           <div
             key={transaction.id}
-            className="bg-white rounded-2xl p-2 flex items-center justify-between"
+            className="bg-white dark:bg-card rounded-2xl p-2 flex items-center justify-between"
           >
             {/* Left Section - Avatar and Info */}
             <div className="flex items-center gap-3 flex-1 ml-1">
@@ -76,20 +76,20 @@ export function TransactionList() {
               {
               transaction.isPositive ? (
                 <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center transition-all bg-green-100`}
+                className={`w-8 h-8 rounded-full flex items-center justify-center transition-all bg-green-100 dark:bg-green-900`}
               >
-                <BanknoteArrowUp className="w-4 h-4 text-black" />
+                <BanknoteArrowUp className="w-4 h-4" />
               </div>) : (
                 <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center transition-all bg-red-100`}
+                className={`w-8 h-8 rounded-full flex items-center justify-center transition-all bg-red-100 dark:bg-red-900`}
               >
-                <BanknoteArrowDown className="w-4 h-4 text-black" />
+                <BanknoteArrowDown className="w-4 h-4" />
               </div>)
               }
 
               {/* Name and Type */}
               <div className="flex-1">
-                <h3 className=" text-[13px] text-gray-900">{transaction.name}</h3>
+                <h3 className=" text-[13px]">{transaction.name}</h3>
                 <div className="flex items-center gap-1">
                   <p className="text-[11px] text-gray-500">{transaction.type}</p>
                 </div>

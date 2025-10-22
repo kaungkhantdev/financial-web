@@ -120,7 +120,8 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground bg-gradient-to-r from-green-100 from-10% via-sky-100 via-30% to-amber-50 to-90%;
+    @apply bg-background text-foreground bg-gradient-to-r from-green-100 from-10% via-sky-100 via-30% to-amber-50 to-90%
+           dark:from-[#0C0C0E] dark:via-[#0C0C0E] dark:to-[#0C0C0E];
   }
   :root {
     --chart-1: oklch(0.646 0.222 41.116);
@@ -138,6 +139,15 @@
     --chart-5: oklch(0.645 0.246 16.439);
   }
 }
+
+
+@layer utilities {
+  .gradient-bg {
+    @apply bg-gradient-to-r from-green-100 from-10% via-sky-100 via-30% to-amber-50 to-90%
+           dark:from-[#0C0C0E] dark:via-[#0C0C0E] dark:to-[#0C0C0E];
+  }
+}
+
 
 
 @utility container {

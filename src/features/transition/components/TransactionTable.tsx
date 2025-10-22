@@ -292,7 +292,7 @@ export const TransactionTable = ({
   }
 
   return (
-    <div className="relative flex flex-col gap-4 overflow-auto p-5 rounded-3xl bg-white">
+    <div className="relative flex flex-col gap-4 overflow-auto p-5 rounded-3xl bg-white dark:bg-card">
         <div className='flex items-center justify-end flex-wrap'>
             <div className='flex items-center justify-end gap-2'>
                 <Input placeholder='search' className="rounded-full"/>
@@ -308,7 +308,7 @@ export const TransactionTable = ({
             id={sortableId}
           >
             <Table>
-              <TableHeader className="sticky top-0 z-10 border-t bg-sky-50">
+              <TableHeader className="sticky top-0 z-10 border-t bg-sky-50 dark:bg-sky-900/50">
                 {table.getHeaderGroups().map((headerGroup) => (
                   <TableRow key={headerGroup.id}>
                     {headerGroup.headers.map((header) => {

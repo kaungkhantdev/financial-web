@@ -8,7 +8,7 @@ const Basics = () => {
   const { theme, setTheme } = useTheme()
 
   return (
-    <div className="w-full p-6 rounded-3xl bg-white">
+    <div className="w-full p-6 rounded-3xl bg-white dark:bg-card">
         <div className="flex items-center justify-between pb-2 border-b border-gray-100 dark:border-gray-900">
             <h2 className="">Basics</h2>
             <Button variant={'link'} className="rounded-full">Edit</Button>

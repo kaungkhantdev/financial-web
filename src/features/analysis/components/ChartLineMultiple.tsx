@@ -40,7 +40,7 @@ const ChartLineMultiple = () => {
       <div>
         <ChartContainer 
           config={chartConfig}
-          className="">
+          className="w-full 2xl:max-w-[480px]">
           <LineChart
             accessibilityLayer
             data={chartData}

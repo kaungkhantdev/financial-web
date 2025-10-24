@@ -67,3 +67,18 @@ export default tseslint.config([
   },
 ])
 ```
+
+## Design Photo
+<p align="center">
+  <img src="./src/assets/sample-2.webp" alt="design-photo"/>
+</p>
+
+
+## Author
+
+<p align="">
+  <b>Kaung Khant Zaw</b>  
+  <br/>
+  <a href="https://github.com/kaungkhantdev">GitHub</a> • 
+  <a href="https://www.linkedin.com/in/kaung-khant-zaw-dev/">LinkedIn</a>
+</p>
